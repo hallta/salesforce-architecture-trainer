@@ -32,9 +32,27 @@ A modern, cohort-based training platform for learning the Salesforce Platform ar
 ### Prerequisites
 
 - Python 3.11+
-- Node.js 18+
+- Node.js 18+ and npm (Install from [Node.js official website](https://nodejs.org/))
 - PostgreSQL 14+
 - Docker (optional)
+
+#### Installing Prerequisites
+
+1. **Python 3.11+**:
+   - Download and install from [Python.org](https://www.python.org/downloads/)
+   - Verify installation: `python --version`
+
+2. **Node.js and npm**:
+   - Download and install from [Node.js official website](https://nodejs.org/)
+   - Verify installation:
+     ```bash
+     node --version  # Should be 18.x or higher
+     npm --version   # Should be 8.x or higher
+     ```
+
+3. **PostgreSQL**:
+   - Download and install from [PostgreSQL official website](https://www.postgresql.org/download/)
+   - Verify installation: `psql --version`
 
 ### Local Development Setup
 
