@@ -1076,10 +1076,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 12,
             title: 'Application Suite',
-            icon: 'bi-grid-3x3-gap',
-            summary: 'Explore Salesforce\'s application suite and how it\'s built on the platform architecture.',
-            content: `<h2>Application Suite</h2><p>Detailed content about Application Suite will be provided here.</p>`,
-            challenges: [
                 "Maintaining backward compatibility while introducing significant architectural changes",
                 "Migrating thousands of customers with minimal disruption",
                 "Integrating acquisitions into a coherent platform architecture",

@@ -222,4 +222,146 @@ main {
         flex-direction: column;
         align-items: flex-start !important;
     }
+}
+
+/* Timeline for AI module */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 2px;
+    background-color: var(--secondary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 45px;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item.active .timeline-content {
+    border-left: 3px solid var(--accent-color);
+}
+
+.timeline-badge {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+    transition: all var(--transition-speed);
+}
+
+.timeline-content {
+    padding: 10px 15px;
+    background-color: var(--card-background);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed);
+}
+
+.timeline-content h6 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* Flow cards for Automation module */
+.flow-card {
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    border: 1px solid var(--secondary-color);
+}
+
+.flow-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.flow-card .card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.flow-card.border-primary {
+    border-width: 2px;
+}
+
+/* Carousel for User Experiences module */
+.carousel-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+}
+
+.carousel-content {
+    padding: 30px;
+    min-height: 200px;
+    background-color: var(--card-background);
+}
+
+.carousel-content h5 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.8;
+    margin: 0 15px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-indicators {
+    bottom: -5px;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    opacity: 0.5;
+    margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--primary-color);
+    opacity: 1;
 } 
