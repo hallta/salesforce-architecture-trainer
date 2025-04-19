@@ -1,41 +1,22 @@
-# Salesforce Architecture Trainer
+# Salesforce Architecture Trainer (Python Version)
 
-A client-side web application designed to help users learn about Salesforce's platform transformation through interactive modules based on the [Salesforce Architecture Fundamentals blog](https://architect.salesforce.com/fundamentals/platform-transformation).
+A minimal Python Flask application that presents a series of modules about Salesforce's platform architecture. This application teaches users about Salesforce's platform transformation, architectural principles, and implementation details.
 
 ## Features
 
-- 19 engaging learning modules that correspond to chapters from the Salesforce Architecture blog
-- Interactive elements including quizzes, expandable sections, and exploration tools
-- Progress tracking within the browser session
+- 19 educational modules covering Salesforce's platform architecture
+- User progress tracking
+- Interactive quizzes to test knowledge
+- Responsive design that works on desktop and mobile
 - Dark/light theme toggle
-- Responsive design for mobile and desktop
-- Fluid animations and transitions
+- Minimal and straightforward UI
 
-## Tech Stack
+## Requirements
 
-- HTML5
-- CSS3 with CSS Variables
-- JavaScript (Vanilla)
-- Bootstrap 5 for layout and components
-- Bootstrap Icons
-- Marked.js for Markdown rendering
+- Python 3.8 or higher
+- Flask
 
-## Getting Started
-
-### Option 1: Direct File Opening (Simplest)
-
-1. Clone this repository:
-   ```
-   git clone https://github.com/yourusername/salesforce-architecture-trainer.git
-   cd salesforce-architecture-trainer
-   ```
-2. Open `index.html` directly in your web browser
-
-### Option 2: Using a Local Server (Recommended)
-
-Using a local server is recommended for the best experience as it allows all features to work properly.
-
-#### Using Python (pre-installed on most macOS/Linux systems)
+## Installation
 
 1. Clone this repository:
    ```
@@ -43,58 +24,104 @@ Using a local server is recommended for the best experience as it allows all fea
    cd salesforce-architecture-trainer
    ```
 
-2. Start a simple HTTP server:
-   - Python 3:
-     ```
-     python -m http.server 8000
-     ```
-   - Python 2:
-     ```
-     python -m SimpleHTTPServer 8000
-     ```
-
-3. Open your browser and navigate to:
+2. Create and activate a virtual environment (recommended):
    ```
-   http://localhost:8000
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
    ```
 
-#### Using Node.js (if you have Node.js installed)
-
-1. Clone this repository:
+3. Install the required packages:
    ```
-   git clone https://github.com/yourusername/salesforce-architecture-trainer.git
-   cd salesforce-architecture-trainer
+   pip install -r requirements.txt
    ```
 
-2. Install a simple HTTP server:
-   ```
-   npm install -g http-server
-   ```
+## Running the Application
 
-3. Run the server:
+1. Start the Flask development server:
    ```
-   http-server -p 8000
+   python app.py
    ```
 
-4. Open your browser and navigate to:
+2. Open your web browser and navigate to:
    ```
-   http://localhost:8000
+   http://127.0.0.1:5001/
    ```
 
-## Structure
+### Command-line Options
 
-- `index.html` - Main HTML structure
-- `styles.css` - Custom styling with animations and theming
-- `app.js` - Application logic and module content
+You can specify a custom host and port using command-line arguments:
 
-## Usage
+```
+python app.py --host 0.0.0.0 --port 8080
+```
 
-- Browse the 19 modules on the home screen
-- Click on any module to start learning
-- Navigate between modules using the next/previous buttons
-- Check your progress using the progress button in the header
-- Toggle between light and dark themes with the theme button
+Available options:
+- `--host`: The host to run the app on (default: 127.0.0.1)
+- `--port`: The port to run the app on (default: 5001)
+
+## Project Structure
+
+```
+salesforce-architecture-trainer/
+├── app.py                  # Main Flask application
+├── templates/              # HTML templates
+│   ├── base.html           # Base template with common structure
+│   ├── index.html          # Module grid view
+│   └── module.html         # Individual module view
+├── static/                 # Static assets (CSS, JS, images)
+├── requirements.txt        # Python dependencies
+└── README.md               # This file
+```
+
+## Creating a requirements.txt File
+
+Create a `requirements.txt` file with the following content:
+
+```
+Flask==2.3.3
+```
+
+## Customization
+
+You can customize the modules by editing the `modules` list in `app.py`. Each module has the following structure:
+
+```python
+{
+    "id": 1,
+    "title": "Module Title",
+    "icon": "bi-icon-name",  # Bootstrap icon class
+    "summary": "Brief summary of the module",
+    "content": "HTML content of the module",
+    "challenges": [
+        "Challenge 1 description",
+        "Challenge 2 description",
+        # etc.
+    ]
+}
+```
+
+## Deployment
+
+This application can be deployed to any platform that supports Python web applications, such as:
+
+- Heroku
+- PythonAnywhere
+- AWS Elastic Beanstalk
+- Google App Engine
+
+## Security Considerations
+
+For production deployment:
+
+1. Set a proper secret key in the environment variable:
+   ```
+   export SECRET_KEY="your-secure-random-key"
+   ```
+
+2. Configure HTTPS to secure user connections
+
+3. Consider adding user authentication if needed
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the LICENSE file for details.

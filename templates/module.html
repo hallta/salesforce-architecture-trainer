@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}{{ module.title }} - Salesforce Architecture Trainer{% endblock %}
+
+{% block content %}
+<div class="module-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2">
+                <i class="bi bi-arrow-left"></i> Back to Modules
+            </a>
+            <span class="badge bg-primary">Module {{ module.id }} of {{ modules|length }}</span>
+        </div>
+        <div>
+            {% if prev_module %}
+            <a href="{{ url_for('module_view', module_id=prev_module) }}" class="btn btn-outline-primary me-2">
+                <i class="bi bi-arrow-left"></i> Previous
+            </a>
+            {% else %}
+            <button class="btn btn-outline-primary me-2" disabled>
+                <i class="bi bi-arrow-left"></i> Previous
+            </button>
+            {% endif %}
+            
+            {% if next_module %}
+            <a href="{{ url_for('module_view', module_id=next_module) }}" class="btn btn-outline-primary">
+                Next <i class="bi bi-arrow-right"></i>
+            </a>
+            {% else %}
+            <button class="btn btn-outline-primary" disabled>
+                Next <i class="bi bi-arrow-right"></i>
+            </button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="module-content">
+        {{ module.content|safe }}
+    </div>
+
+    <div class="challenges-section mt-5">
+        <h3>Challenges</h3>
+        <p class="text-muted">Complete these challenges to deepen your understanding of this module:</p>
+        <ol class="list-group list-group-numbered">
+            {% for challenge in module.challenges %}
+            <li class="list-group-item">{{ challenge }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+
+    <div class="d-flex justify-content-between mt-5">
+        <div>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Back to Modules
+            </a>
+        </div>
+        <div>
+            <button id="complete-module-btn" class="btn btn-success">
+                Mark as Completed <i class="bi bi-check2-circle"></i>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Handle quiz interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        const quizOptions = document.querySelectorAll('.quiz-option');
+        
+        quizOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const parentQuiz = this.closest('.quiz-container');
+                const allOptions = parentQuiz.querySelectorAll('.quiz-option');
+                const feedback = parentQuiz.querySelector('.quiz-feedback');
+                
+                // If already answered, do nothing
+                if (this.classList.contains('correct') || this.classList.contains('incorrect')) {
+                    return;
+                }
+                
+                // Remove any previous selections
+                allOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Select this option
+                this.classList.add('selected');
+                
+                // Check if correct
+                const isCorrect = this.getAttribute('data-correct') === 'true';
+                
+                // Show result
+                if (isCorrect) {
+                    this.classList.add('correct');
+                    feedback.classList.add('alert', 'alert-success');
+                    feedback.textContent = 'Correct! Great job!';
+                } else {
+                    this.classList.add('incorrect');
+                    feedback.classList.add('alert', 'alert-danger');
+                    feedback.textContent = 'Incorrect. Try again!';
+                    
+                    // Highlight the correct answer
+                    allOptions.forEach(opt => {
+                        if (opt.getAttribute('data-correct') === 'true') {
+                            opt.classList.add('correct');
+                        }
+                    });
+                }
+                
+                feedback.classList.remove('d-none');
+            });
+        });
+    });
+    
+    // Mark module as completed
+    document.getElementById('complete-module-btn').addEventListener('click', function() {
+        fetch('/api/complete-module/{{ module.id }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                this.innerHTML = '<i class="bi bi-check2-all"></i> Completed';
+                this.classList.remove('btn-success');
+                this.classList.add('btn-secondary');
+                this.disabled = true;
+                
+                {% if next_module %}
+                // Redirect to next module after a short delay
+                setTimeout(() => {
+                    window.location.href = "{{ url_for('module_view', module_id=next_module) }}";
+                }, 1500);
+                {% else %}
+                // Redirect to the module list if this is the last module
+                setTimeout(() => {
+                    window.location.href = "{{ url_for('index') }}";
+                }, 1500);
+                {% endif %}
+            }
+        });
+    });
+
+    // Show "Mark as Completed" button only if quiz answers are correct
+    function checkQuizCompletion() {
+        const quizContainers = document.querySelectorAll('.quiz-container');
+        let allCorrect = true;
+        
+        quizContainers.forEach(container => {
+            const correctAnswers = container.querySelectorAll('.quiz-option[data-correct="true"].correct');
+            if (correctAnswers.length === 0) {
+                allCorrect = false;
+            }
+        });
+        
+        return allCorrect;
+    }
+</script>
+{% endblock %} 

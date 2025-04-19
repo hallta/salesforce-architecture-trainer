@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Salesforce Architecture Trainer - Modules{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1 class="display-5 fw-bold">Salesforce Architecture Trainer</h1>
+        <p class="lead">Learn about Salesforce's platform transformation and architecture in 19 comprehensive modules.</p>
+        <div class="progress progress-indicator">
+            {% set completion_percentage = (user_progress.completed_modules|length / modules|length * 100)|round %}
+            <div class="progress-bar" role="progressbar" style="width: {{ completion_percentage }}%;" 
+                 aria-valuenow="{{ completion_percentage }}" aria-valuemin="0" aria-valuemax="100">
+                {{ completion_percentage }}%
+            </div>
+        </div>
+        <p class="text-muted small">{{ user_progress.completed_modules|length }} of {{ modules|length }} modules completed</p>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" id="modules-grid">
+    {% for module in modules %}
+    <div class="col module-item">
+        <div class="card module-card {% if module.id in user_progress.completed_modules %}completed{% elif module.id == user_progress.current_module %}in-progress{% endif %}">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="module-icon me-3"><i class="{{ module.icon }}"></i></div>
+                    <h5 class="card-title mb-0">{{ module.title }}</h5>
+                </div>
+                <p class="card-text">{{ module.summary }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-primary badge-module">Module {{ module.id }}</span>
+                    {% if module.id in user_progress.completed_modules %}
+                    <span class="text-success"><i class="bi bi-check-circle-fill"></i> Completed</span>
+                    {% elif module.id == user_progress.current_module %}
+                    <span class="text-warning"><i class="bi bi-hourglass-split"></i> In Progress</span>
+                    {% endif %}
+                </div>
+                <a href="{{ url_for('module_view', module_id=module.id) }}" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
