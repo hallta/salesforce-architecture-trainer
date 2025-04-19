@@ -18,100 +18,298 @@ document.addEventListener('DOMContentLoaded', () => {
                             <li>Salesforce pioneered the first multitenant cloud platform</li>
                             <li>The platform has expanded to serve hundreds of thousands of businesses</li>
                             <li>Salesforce enhanced its Customer360 product suite through strategic acquisitions</li>
+                            <li>More than 85% of customers have transitioned to the new platform architecture</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="module-section">
-                    <h4>Market Challenges</h4>
-                    <p>Recent shifts in the market and industry necessitated a reevaluation of the Salesforce Platform:</p>
+                    <h4>Industry Shifts Driving Transformation</h4>
+                    <p>Shifts in the market and industry in recent years necessitated a reevaluation of the Salesforce Platform:</p>
+                    
                     <div class="interactive-element">
-                        <h5>Explore the Challenges</h5>
-                        <div id="challenge-container">
-                            <button class="btn btn-sm btn-outline-primary mb-2" onclick="showChallenge(1)">Challenge 1</button>
-                            <button class="btn btn-sm btn-outline-primary mb-2" onclick="showChallenge(2)">Challenge 2</button>
-                            <button class="btn btn-sm btn-outline-primary mb-2" onclick="showChallenge(3)">Challenge 3</button>
-                            <button class="btn btn-sm btn-outline-primary mb-2" onclick="showChallenge(4)">Challenge 4</button>
-                            <button class="btn btn-sm btn-outline-primary mb-2" onclick="showChallenge(5)">Challenge 5</button>
-                            <button class="btn btn-sm btn-outline-primary mb-2" onclick="showChallenge(6)">Challenge 6</button>
-                            <div id="challenge-content" class="mt-3"></div>
+                        <h5>Explore Market Drivers</h5>
+                        <div class="accordion" id="marketDrivers">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#driver1">
+                                        Public Cloud Emergence
+                                    </button>
+                                </h2>
+                                <div id="driver1" class="accordion-collapse collapse" data-bs-parent="#marketDrivers">
+                                    <div class="accordion-body">
+                                        <p>The emergence of public cloud providers who invest heavily in infrastructure created new opportunities and challenges. These hyperscalers offered global reach, elastic scalability, and specialized services that could enhance Salesforce's capabilities while requiring a fundamental rethinking of infrastructure architecture.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#driver2">
+                                        Regulatory Requirements
+                                    </button>
+                                </h2>
+                                <div id="driver2" class="accordion-collapse collapse" data-bs-parent="#marketDrivers">
+                                    <div class="accordion-body">
+                                        <p>Increasing data residency and regulatory demands across different sectors and countries required a more flexible approach to deployment. Organizations in highly regulated industries and regions needed guarantees about where their data was stored and processed, leading to new architectural challenges.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#driver3">
+                                        Data Scale and Real-Time Processing
+                                    </button>
+                                </h2>
+                                <div id="driver3" class="accordion-collapse collapse" data-bs-parent="#marketDrivers">
+                                    <div class="accordion-body">
+                                        <p>The need for handling real-time data and transactions at a much larger scale due to the rise of social and mobile technologies transformed how customers interacted with businesses. This required fundamental changes to data architecture and processing capabilities to support billions of interactions and petabytes of data.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#driver4">
+                                        AI Advancements
+                                    </button>
+                                </h2>
+                                <div id="driver4" class="accordion-collapse collapse" data-bs-parent="#marketDrivers">
+                                    <div class="accordion-body">
+                                        <p>Rapid advancements in machine learning and AI, particularly in Generative AI, opened new possibilities for enhancing business processes and customer experiences. These technologies required new architectural patterns to support the massive data and compute needs of advanced AI systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#driver5">
+                                        Enterprise Security and Reliability
+                                    </button>
+                                </h2>
+                                <div id="driver5" class="accordion-collapse collapse" data-bs-parent="#marketDrivers">
+                                    <div class="accordion-body">
+                                        <p>Growing requirements for cybersecurity, system availability, performance, and resilience required a new approach to platform architecture. As Salesforce became mission-critical for more organizations, the need for enterprise-grade security and reliability became paramount.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#driver6">
+                                        Integrated Experience
+                                    </button>
+                                </h2>
+                                <div id="driver6" class="accordion-collapse collapse" data-bs-parent="#marketDrivers">
+                                    <div class="accordion-body">
+                                        <p>A demand from customers for an integrated suite that balances a loosely coupled but coherent architecture required rethinking how Salesforce services connected and interoperated. Customers needed seamless experiences across products while maintaining the flexibility of independent services.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="module-section">
-                    <h4>Platform Transformation</h4>
+                    <h4>The Transformation Journey</h4>
                     <p>In response to these challenges, Salesforce embarked on a mission four years ago to completely transform its platform from the ground up. This initiative aimed to address the aforementioned challenges and lay the groundwork for the next generation of applications and customer use cases, all while upholding application availability goals.</p>
-                    <p>The launch of Agentforce at Dreamforce 2024 represents the culmination of this extensive effort, involving thousands of Salesforce Technology and Product organization team members.</p>
+                    
+                    <div class="image-container text-center my-4">
+                        <img src="images/platform-transformation-timeline.png" alt="Salesforce Platform Transformation Timeline" class="img-fluid rounded shadow" />
+                        <p class="image-caption">Timeline of Salesforce's platform transformation journey</p>
+                    </div>
+                    
+                    <p>The launch of Agentforce at Dreamforce 2024 represents the culmination of this extensive effort, involving thousands of Salesforce Technology and Product organization team members. Currently, more than 85% of customers have transitioned to this new platform. The successful migration of a majority of customers, including those with the most demanding workloads, underscores the ingenuity of Salesforce engineers and reaffirms Salesforce's core values of Trust, Customer Success, and Innovation.</p>
+                </div>
+
+                <div class="module-section">
+                    <h4>Key Transformation Outcomes</h4>
+                    <div class="row mb-4">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <i class="bi bi-cloud-check fs-1 text-primary"></i>
+                                    </div>
+                                    <h5 class="card-title text-center">Hyperforce Adoption</h5>
+                                    <p class="card-text">Migration to cloud-based infrastructure across multiple public cloud providers, offering enhanced global reach and scalability.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <i class="bi bi-boxes fs-1 text-primary"></i>
+                                    </div>
+                                    <h5 class="card-title text-center">Service Independence</h5>
+                                    <p class="card-text">Evolution from monolithic architecture to independent services with clear boundaries and responsibilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <i class="bi bi-database-check fs-1 text-primary"></i>
+                                    </div>
+                                    <h5 class="card-title text-center">Data Cloud Integration</h5>
+                                    <p class="card-text">Introduction of lakehouse technologies alongside traditional relational data stores for enhanced data processing at scale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <i class="bi bi-robot fs-1 text-primary"></i>
+                                    </div>
+                                    <h5 class="card-title text-center">AI Integration</h5>
+                                    <p class="card-text">Incorporation of generative AI and AI Agent technologies throughout the platform, enabling new intelligent capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <i class="bi bi-shield-check fs-1 text-primary"></i>
+                                    </div>
+                                    <h5 class="card-title text-center">Enhanced Security</h5>
+                                    <p class="card-text">Implementation of zero-trust security models and advanced compliance features to meet the highest security standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Leadership Perspective</h4>
+                    <div class="quote-container p-4 bg-light rounded shadow-sm my-4">
+                        <i class="bi bi-quote fs-1 text-primary opacity-50"></i>
+                        <blockquote class="blockquote">
+                            <p>"The successful migration of a majority of our customers, including those with the most demanding workloads, underscores the ingenuity of our engineers and reaffirms Salesforce's core values of Trust, Customer Success, and Innovation."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mt-2">
+                            Srini Tallapragada, President & Chief Engineering Officer of Salesforce
+                        </figcaption>
+                    </div>
                 </div>
 
                 <div class="quiz-container">
                     <h4>Quick Check</h4>
-                    <p>What percentage of Salesforce customers have transitioned to the new platform?</p>
+                    <p>What percentage of Salesforce customers have transitioned to the new platform architecture?</p>
                     <div class="quiz-options">
                         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Around 50%</div>
-                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Over 70%</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">More than 70%</div>
                         <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">More than 85%</div>
-                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Less than 30%</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">100%</div>
                     </div>
                     <div class="quiz-feedback d-none"></div>
                 </div>
             `,
             challenges: [
-                "The emergence of public cloud providers who invest heavily in infrastructure.",
-                "Increasing data residency and regulatory demands across different sectors and countries.",
-                "The need for handling real-time data and transactions at a much larger scale due to the rise of social and mobile technologies.",
-                "Rapid advancements in machine learning and AI, particularly in Generative AI.",
-                "Growing requirements for cybersecurity, system availability, performance, and resilience.",
-                "A demand from customers for an integrated suite that balances a loosely coupled but coherent architecture."
+                "How did the emergence of public cloud providers influence Salesforce's platform transformation? Explain the key benefits and challenges this presented.",
+                "What are the specific data residency and regulatory demands that drove Salesforce's platform evolution? Research and list at least three specific regulations that impact cloud platforms.",
+                "Explain how the need for real-time data processing at scale impacted Salesforce's architectural decisions. What specific technologies were introduced to address this challenge?",
+                "How did advancements in AI, particularly Generative AI, shape Salesforce's platform transformation? What new capabilities do these technologies enable?",
+                "Analyze how Salesforce balanced the need for security and system availability with the need for innovation and new capabilities. What architectural principles guided this balance?",
+                "Create a visual timeline depicting the major milestones in Salesforce's platform transformation journey from its founding in 1999 to the launch of Agentforce in 2024.",
+                "Compare and contrast Salesforce's platform before and after the transformation. Identify at least five key differences and explain their significance.",
+                "Research and describe how Salesforce's platform transformation compares to similar transformations undertaken by other major enterprise software companies. What unique approaches did Salesforce take?"
             ]
         },
         {
             id: 2,
             title: 'Architecture Overview',
-            icon: 'bi-diagram-3',
-            summary: 'Understand the architectural principles and key transformations of the Salesforce Platform.',
+            icon: 'bi-layers',
+            summary: 'Get a comprehensive overview of Salesforce\'s platform architecture and its key principles.',
             content: `
                 <h2>Architecture Overview</h2>
                 <div class="module-section">
-                    <p>The architectural principles of the Salesforce Platform have remained unchanged as they capture the foundation and differentiation for how Salesforce engineers features and capabilities.</p>
+                    <p>The architectural principles of the Salesforce Platform have remained unchanged as they capture the foundation and differentiation for how Salesforce engineers features and capabilities. These principles guide the development and evolution of the platform, ensuring it meets the needs of customers while maintaining its unique value proposition.</p>
                     
                     <div class="key-highlight">
-                        <h5>Key Architectural Principles</h5>
+                        <h5>Foundational Architectural Principles</h5>
                         <ul>
-                            <li><strong>Enterprise-Grade Trust:</strong> Trust is Salesforce's #1 value</li>
-                            <li><strong>Multitenant:</strong> All services and infrastructure are built to host multiple customers</li>
-                            <li><strong>Metadata-Driven:</strong> Metadata is at the heart of how multitenant services are customizable</li>
-                            <li><strong>API First:</strong> The platform prioritizes a rich and coherent API portfolio</li>
-                            <li><strong>Open and Interoperable:</strong> The platform can be integrated into any enterprise architecture</li>
+                            <li><strong>Enterprise-Grade Trust:</strong> Trust is Salesforce's #1 value, prioritizing availability, security, access control, compliance and security features</li>
+                            <li><strong>Multitenant:</strong> All services and infrastructure host multiple customers, scaling efficiently and standardizing high availability for all customers</li>
+                            <li><strong>Metadata-Driven:</strong> Extensible metadata enables customization while benefiting from ongoing platform updates</li>
+                            <li><strong>API First:</strong> Rich, coherent API portfolio covering all platform functionality</li>
+                            <li><strong>Open and Interoperable:</strong> Designed to integrate with any enterprise architecture, cloud or on-premises</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="module-section">
-                    <h4>Key Transformations</h4>
-                    <p>The current Salesforce Platform represents the latest stage in evolution since the 2008 debut of the Force.com Platform. Recent key transformations include:</p>
+                    <h4>Platform Evolution</h4>
+                    <p>The current Salesforce Platform represents the latest stage in the evolution of Salesforce's capabilities since the 2008 debut of the Force.com Platform. Recent key transformations include:</p>
+                    
                     <div class="interactive-element">
-                        <h5>Explore the Transformations</h5>
-                        <div class="transformation-tabs">
-                            <div class="nav nav-tabs" id="transformation-tab" role="tablist">
-                                <button class="nav-link active" id="hyperforce-tab" data-bs-toggle="tab" data-bs-target="#hyperforce" type="button" role="tab">Hyperforce</button>
-                                <button class="nav-link" id="architecture-tab" data-bs-toggle="tab" data-bs-target="#architecture" type="button" role="tab">Architecture</button>
-                                <button class="nav-link" id="data-tab" data-bs-toggle="tab" data-bs-target="#data" type="button" role="tab">Data</button>
-                                <button class="nav-link" id="ai-tab" data-bs-toggle="tab" data-bs-target="#ai" type="button" role="tab">AI</button>
+                        <h5>Explore Platform Evolution</h5>
+                        <div class="timeline">
+                            <div class="timeline-item" onclick="highlightTimelineItem(this)">
+                                <div class="timeline-badge bg-primary">2008</div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h6 class="timeline-title">Force.com Platform</h6>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Launch of the Force.com platform, providing a metadata-driven architecture for building custom apps on the Salesforce infrastructure.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab-content p-3 border border-top-0 rounded-bottom">
-                                <div class="tab-pane fade show active" id="hyperforce" role="tabpanel">
-                                    <p>Adoption of Hyperforce and a shift to cloud-based architectures.</p>
+                            <div class="timeline-item" onclick="highlightTimelineItem(this)">
+                                <div class="timeline-badge bg-primary">2014</div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h6 class="timeline-title">Lightning Platform</h6>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Introduction of Lightning Experience and component-based UI architecture, enabling more modern and responsive applications.</p>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="architecture" role="tabpanel">
-                                    <p>Evolution from a monolithic architecture to a structure with independent services.</p>
+                            </div>
+                            <div class="timeline-item" onclick="highlightTimelineItem(this)">
+                                <div class="timeline-badge bg-primary">2019</div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h6 class="timeline-title">Customer 360 Platform</h6>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Unification of various Salesforce clouds into an integrated Customer 360 platform, providing a single view of the customer.</p>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="data" role="tabpanel">
-                                    <p>Introduction of Data Cloud and lakehouse technologies alongside traditional relational data stores.</p>
+                            </div>
+                            <div class="timeline-item" onclick="highlightTimelineItem(this)">
+                                <div class="timeline-badge bg-primary">2020</div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h6 class="timeline-title">Hyperforce Launch</h6>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Beginning of the shift to public cloud infrastructure with enhanced scalability, global reach, and security capabilities.</p>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="ai" role="tabpanel">
-                                    <p>Integration of generative AI and AI Agent technologies.</p>
+                            </div>
+                            <div class="timeline-item" onclick="highlightTimelineItem(this)">
+                                <div class="timeline-badge bg-primary">2022</div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h6 class="timeline-title">Data Cloud & Genie</h6>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Introduction of lakehouse architecture and real-time data platform capabilities, enabling new data-intensive applications.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" onclick="highlightTimelineItem(this)">
+                                <div class="timeline-badge bg-primary">2024</div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h6 class="timeline-title">Agentforce</h6>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Integration of generative AI and agent technologies throughout the platform, enabling autonomous and intelligent applications.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -119,133 +317,365 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <div class="module-section">
-                    <h4>Platform Structure</h4>
+                    <h4>Architectural Layers</h4>
                     <p>The Salesforce Platform is structured into several layers, each contributing to its comprehensive capabilities:</p>
-                    <ul>
-                        <li><strong>Hyperforce:</strong> The foundational infrastructure</li>
-                        <li><strong>Metadata Framework:</strong> Provides a stable abstraction for apps</li>
-                        <li><strong>Data:</strong> Includes multitenant relational database and lakehouse</li>
-                        <li><strong>AI:</strong> Builds on the data layer with AI technologies</li>
-                        <li><strong>App Platform Services:</strong> Provides tools for IT admins and developers</li>
-                        <li><strong>Business Capabilities:</strong> Offers a range of capabilities for business needs</li>
-                        <li><strong>APIs and API Management:</strong> Ensures all platform capabilities are accessible</li>
-                        <li><strong>User and Developer Experience:</strong> Features user-friendly interfaces</li>
-                        <li><strong>Integration:</strong> Integrates the platform within any enterprise architecture</li>
-                        <li><strong>Apps and Industries:</strong> Provides a suite of customizable apps and solutions</li>
-                    </ul>
+                    
+                    <div class="image-container text-center my-4">
+                        <img src="images/platform-architecture-layers.png" alt="Salesforce Platform Architecture Layers" class="img-fluid rounded shadow" />
+                        <p class="image-caption">Layered architecture of the Salesforce Platform</p>
+                    </div>
+                    
+                    <div class="interactive-element mt-4">
+                        <h5>Explore Platform Layers</h5>
+                        <div class="accordion" id="platformLayers">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer1">
+                                        Hyperforce
+                                    </button>
+                                </h2>
+                                <div id="layer1" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>The foundational infrastructure has evolved from first-party data centers to public cloud providers, enhanced with Salesforce technologies for secure, compliant, highly-available, and cost-efficient hosting.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer2">
+                                        Metadata Framework
+                                    </button>
+                                </h2>
+                                <div id="layer2" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Provides a stable abstraction for apps to build on, even as the technologies evolve. Includes an object-relational mapper, prescriptive order of execution, and a "core" runtime that bridges the metadata definitions with the metadata-driven runtimes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer3">
+                                        Data
+                                    </button>
+                                </h2>
+                                <div id="layer3" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Includes a multitenant relational database and a petabyte-scale lakehouse for managing Salesforce and non-Salesforce data, supporting unstructured data and content management, with advanced search and analytical processing capabilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer4">
+                                        AI
+                                    </button>
+                                </h2>
+                                <div id="layer4" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Builds on the data layer with predictive AI and newer generative AI and AI Agent technologies, providing intelligent capabilities throughout the platform.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer5">
+                                        App Platform Services
+                                    </button>
+                                </h2>
+                                <div id="layer5" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Provides tools for IT admins, developers, and vendors to build and customize applications, offering an opinionated abstraction to simplify common and complex tasks.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer6">
+                                        Business Capabilities
+                                    </button>
+                                </h2>
+                                <div id="layer6" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Offers a range of capabilities to meet diverse business needs, allowing developers to tailor applications as needed for specific business contexts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer7">
+                                        APIs and API Management
+                                    </button>
+                                </h2>
+                                <div id="layer7" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Ensures all platform capabilities are accessible through well-formed APIs, facilitating service and layer interdependencies and enabling integration with external systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer8">
+                                        User and Developer Experience
+                                    </button>
+                                </h2>
+                                <div id="layer8" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Features user-friendly interfaces for end-users and a range of development tools from low-code to pro-code for application development and customization.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer9">
+                                        Integration
+                                    </button>
+                                </h2>
+                                <div id="layer9" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Integrates the platform within any enterprise architecture, enabling compatibility with Salesforce and non-Salesforce systems through data connectors and other tools.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layer10">
+                                        Apps and Industries
+                                    </button>
+                                </h2>
+                                <div id="layer10" class="accordion-collapse collapse" data-bs-parent="#platformLayers">
+                                    <div class="accordion-body">
+                                        <p>Provides a suite of customizable apps and industry-specific solutions with AI agents built on the platform's integrated capabilities, leveraging the full range of lower-layer functionalities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Architectural Coherence</h4>
+                    <p>These changes have expanded and refined the platform's capabilities without significant disruptions, thanks to robust abstractions that allow Salesforce engineers to advance technologies seamlessly with minimal customer disruption. The robust abstraction also continues to be key to the Salesforce Platform's value of simplifying the technical complexities of enterprise-grade software, like security, availability, and technology conventions, so app developers can focus on solving their unique challenges.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Abstraction Benefits</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Shields developers from infrastructure complexity</li>
+                                    <li class="list-group-item">Enables technology evolution without breaking changes</li>
+                                    <li class="list-group-item">Provides consistent development patterns</li>
+                                    <li class="list-group-item">Simplifies enterprise-grade security implementation</li>
+                                    <li class="list-group-item">Ensures backward compatibility during upgrades</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Integration Advantages</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Each layer integrates with all layers above</li>
+                                    <li class="list-group-item">Ensures consistent experiences across applications</li>
+                                    <li class="list-group-item">Enables cross-cloud functionality</li>
+                                    <li class="list-group-item">Supports unified data and UI patterns</li>
+                                    <li class="list-group-item">Facilitates coherent AI capabilities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="quiz-container">
                     <h4>Quick Check</h4>
-                    <p>Which of the following is NOT one of the architectural principles of the Salesforce Platform?</p>
+                    <p>Which of the following is NOT one of the foundational architectural principles of the Salesforce Platform?</p>
                     <div class="quiz-options">
                         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Enterprise-Grade Trust</div>
                         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Metadata-Driven</div>
-                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">API First</div>
-                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Code-First Development</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Mobile-First Design</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Multitenant</div>
                     </div>
                     <div class="quiz-feedback d-none"></div>
                 </div>
-            `
+            `,
+            challenges: [
+                "Analyze the relationship between Salesforce's architectural principles and its business model. How do principles like multitenancy and metadata-driven architecture contribute to Salesforce's success?",
+                "Create a detailed visual diagram of the platform layers, showing how they interact and depend on each other. Highlight the key components within each layer.",
+                "Compare and contrast Salesforce's architectural evolution with other major cloud platforms (like AWS, Azure, or Google Cloud). What unique architectural choices has Salesforce made?",
+                "Research and explain the technical challenges involved in maintaining backward compatibility while evolving a platform architecture. How has Salesforce addressed these challenges?",
+                "Identify potential architectural limitations or trade-offs in Salesforce's approach. What are the implications for customers and developers?",
+                "Design a presentation that explains Salesforce's architectural principles to a non-technical audience. Focus on the business benefits of each principle.",
+                "Explore how Salesforce's architecture enables both standardization and customization. What specific architectural elements allow for this balance?",
+                "Investigate the impact of Salesforce's API-first approach on the ecosystem of applications and integrations built around the platform. How does this compare to other platforms?",
+                "Develop a timeline showing how each architectural layer has evolved over time, noting major milestones and technology shifts."
+            ]
         },
         {
             id: 3,
             title: 'Hyperforce',
             icon: 'bi-cloud',
-            summary: 'Explore Salesforce\'s infrastructure evolution to operate across multiple public cloud providers worldwide.',
+            summary: 'Explore Salesforce\'s infrastructure evolution to Hyperforce, operating on public cloud providers.',
             content: `
                 <h2>Hyperforce</h2>
                 <div class="module-section">
                     <p>Salesforce has been developing global data center infrastructure for nearly 25 years, predating many current Hyperscalers and IaaS vendors. Hyperforce, the current generation of Salesforce's infrastructure evolution, is designed to operate across multiple public cloud providers worldwide.</p>
                     
                     <div class="key-highlight">
-                        <h5>Hyperforce is designed to meet:</h5>
+                        <h5>Key Hyperforce Benefits</h5>
                         <ul>
-                            <li>Elastic B2C scale requirements</li>
-                            <li>Global data residency needs</li>
-                            <li>Enhanced availability demands</li>
-                            <li>Top-tier security requirements</li>
-                            <li>Regulatory compliance across regions</li>
+                            <li><strong>Elastic B2C Scale:</strong> Seamlessly handle massive transaction volumes for business-to-consumer operations</li>
+                            <li><strong>Global Data Residency:</strong> Store and process data in compliance with local regulations across 20+ regions</li>
+                            <li><strong>Enhanced Availability:</strong> Leverage cloud provider's global infrastructure for improved reliability</li>
+                            <li><strong>Top-tier Security:</strong> Implement zero-trust security model with comprehensive protections</li>
+                            <li><strong>Regulatory Compliance:</strong> Meet industry-specific and regional regulatory requirements</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="module-section">
+                    <h4>Infrastructure Evolution</h4>
+                    <p>Hyperforce represents a significant evolution from Salesforce's first-party data centers to a cloud-native architecture that can operate across multiple cloud providers. This transformation standardizes infrastructure across all Salesforce products, facilitating rapid integration of new acquisitions and enabling deployment in regions where Salesforce previously had no infrastructure.</p>
+                    
+                    <div class="image-container text-center my-4">
+                        <img src="images/hyperforce-global-regions.png" alt="Hyperforce Global Regions" class="img-fluid rounded shadow" />
+                        <p class="image-caption">Hyperforce availability across global regions</p>
+                    </div>
+                    
+                    <p>Hyperforce ensures delivery of the Salesforce Platform, allowing for swift deployment of new features and applications, meeting data residency and regulatory compliance requirements in 20 regions across the world.</p>
+                </div>
+
+                <div class="module-section">
                     <h4>Architectural Principles</h4>
-                    <p>During Salesforce's transition to Hyperforce, significant differences in services, interfaces, and compliance levels among hyperscalers were identified. To build a robust and portable foundation, these architectural principles were adopted:</p>
+                    <p>During Salesforce's transition to Hyperforce, significant differences in services, interfaces, and compliance levels among hyperscalers were identified. To build a robust and portable foundation for the Salesforce Platform, these architectural principles were adopted:</p>
                     
                     <div class="interactive-element">
-                        <h5>Explore the Architectural Principles</h5>
-                        <div class="accordion" id="architecturePrinciples">
+                        <h5>Explore Hyperforce Architectural Principles</h5>
+                        <div class="accordion" id="hyperforceArchitecture">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hfPrinciple1">
                                         Infrastructure as Code
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#architecturePrinciples">
+                                <div id="hfPrinciple1" class="accordion-collapse collapse" data-bs-parent="#hyperforceArchitecture">
                                     <div class="accordion-body">
-                                        Utilizing a domain-driven architecture, this principle involves declarative coding for infrastructure, creating immutable artifacts, and automating infrastructure on-demand using standards like Kubernetes and Service Mesh.
+                                        <p>Utilizing a domain-driven architecture, this principle involves declarative coding for infrastructure, creating immutable artifacts, and automating infrastructure on-demand using standards like Kubernetes and Service Mesh. This ensures consistent, repeatable deployment across different environments and cloud providers.</p>
+                                        <div class="text-center my-3">
+                                            <i class="bi bi-code-square fs-1 text-primary"></i>
+                                        </div>
+                                        <ul class="mt-3">
+                                            <li>Declarative infrastructure definitions</li>
+                                            <li>Version-controlled infrastructure templates</li>
+                                            <li>Automated provisioning and scaling</li>
+                                            <li>Standardized container orchestration</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hfPrinciple2">
                                         Zero-Trust Security
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#architecturePrinciples">
+                                <div id="hfPrinciple2" class="accordion-collapse collapse" data-bs-parent="#hyperforceArchitecture">
                                     <div class="accordion-body">
-                                        Implementing a zero-trust security model with comprehensive defense strategies including identity management, authentication, authorization, network isolation, least privilege security policies, and encryption of data both in transit and at rest.
+                                        <p>Implementing a zero-trust security model with comprehensive defense strategies including identity management, authentication, authorization, network isolation, least privilege security policies, and encryption of data both in transit and at rest. This ensures that security is enforced regardless of network location or cloud provider.</p>
+                                        <div class="text-center my-3">
+                                            <i class="bi bi-shield-lock fs-1 text-primary"></i>
+                                        </div>
+                                        <ul class="mt-3">
+                                            <li>Identity-based access control</li>
+                                            <li>Micro-segmentation of networks</li>
+                                            <li>Continuous authentication and authorization</li>
+                                            <li>Encryption everywhere (data at rest and in transit)</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hfPrinciple3">
                                         Managed Services
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#architecturePrinciples">
+                                <div id="hfPrinciple3" class="accordion-collapse collapse" data-bs-parent="#hyperforceArchitecture">
                                     <div class="accordion-body">
-                                        Emphasizing the use of multitenant and multi-cloud services, this principle enhances portability across different infrastructures and environments such as commercial, government, and air-gapped systems.
+                                        <p>Emphasizing the use of multitenant and multi-cloud services, this principle enhances portability across different infrastructures and environments such as commercial, government, and air-gapped systems. Managed services provide standardized capabilities that can be deployed consistently across different cloud providers.</p>
+                                        <div class="text-center my-3">
+                                            <i class="bi bi-gear fs-1 text-primary"></i>
+                                        </div>
+                                        <ul class="mt-3">
+                                            <li>Abstraction layers over provider-specific services</li>
+                                            <li>Common APIs for equivalent cloud services</li>
+                                            <li>Portability across commercial and government clouds</li>
+                                            <li>Consistent management interfaces</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hfPrinciple4">
                                         Built-in Resilience
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#architecturePrinciples">
+                                <div id="hfPrinciple4" class="accordion-collapse collapse" data-bs-parent="#hyperforceArchitecture">
                                     <div class="accordion-body">
-                                        Mission-critical services are spread across multiple Availability Zones to ensure high availability. Data is replicated across Availability regions. Services are also labeled with availability tiering to manage service level objectives and resilience planning.
+                                        <p>Mission-critical services are spread across multiple Availability Zones to ensure high availability. Data is replicated across Availability regions. Services are also labeled with availability tiering to manage service level objectives and resilience planning. This architectural approach ensures that the platform can withstand failures at various levels of the infrastructure.</p>
+                                        <div class="text-center my-3">
+                                            <i class="bi bi-arrow-repeat fs-1 text-primary"></i>
+                                        </div>
+                                        <ul class="mt-3">
+                                            <li>Multi-availability zone deployment</li>
+                                            <li>Cross-region replication</li>
+                                            <li>Automated failover mechanisms</li>
+                                            <li>Tiered service level objectives</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hfPrinciple5">
                                         Fully Observable
                                     </button>
                                 </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#architecturePrinciples">
+                                <div id="hfPrinciple5" class="accordion-collapse collapse" data-bs-parent="#hyperforceArchitecture">
                                     <div class="accordion-body">
-                                        Integration of all services into a standard observability platform for efficient monitoring, which includes log collection, metrics gathering, alerting, distributed tracing, and tracking of service operations like traffic volume, error rates, and resource utilization.
+                                        <p>Integration of all services into a standard observability platform for efficient monitoring, which includes log collection, metrics gathering, alerting, distributed tracing, and tracking of service operations like traffic volume, error rates, and resource utilization. This comprehensive approach enables proactive management and rapid troubleshooting.</p>
+                                        <div class="text-center my-3">
+                                            <i class="bi bi-graph-up fs-1 text-primary"></i>
+                                        </div>
+                                        <ul class="mt-3">
+                                            <li>Centralized logging and monitoring</li>
+                                            <li>Distributed tracing across services</li>
+                                            <li>Real-time metrics and alerting</li>
+                                            <li>End-to-end visibility of transactions</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hfPrinciple6">
                                         Automated Operations
                                     </button>
                                 </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#architecturePrinciples">
+                                <div id="hfPrinciple6" class="accordion-collapse collapse" data-bs-parent="#hyperforceArchitecture">
                                     <div class="accordion-body">
-                                        This includes automated management of infrastructure lifecycle and predictive AIOps (AI for operations) for maintaining quality of service, detecting, and addressing service degradations, and failure detection.
+                                        <p>This includes automated management of infrastructure lifecycle and predictive AIOps (AI for operations) for maintaining quality of service, detecting, and addressing service degradations, and failure detection. Automation enables consistent operation at scale across different cloud environments while minimizing manual intervention.</p>
+                                        <div class="text-center my-3">
+                                            <i class="bi bi-robot fs-1 text-primary"></i>
+                                        </div>
+                                        <ul class="mt-3">
+                                            <li>AI-driven anomaly detection</li>
+                                            <li>Automated remediation workflows</li>
+                                            <li>Predictive capacity planning</li>
+                                            <li>Self-healing infrastructure components</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -253,18 +683,111 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
 
+                <div class="module-section">
+                    <h4>Cloud Provider Strategy</h4>
+                    <p>Hyperforce is designed to operate across multiple public cloud providers, allowing Salesforce to leverage the best capabilities of each provider while avoiding vendor lock-in. This multi-cloud approach also enables Salesforce to meet specific regional and regulatory requirements by selecting the most appropriate cloud provider for each location.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Multi-Cloud Benefits</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Avoid vendor lock-in</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Leverage best-in-class services from each provider</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Optimize cost across providers</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Meet region-specific regulatory requirements</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Enhanced global availability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Abstraction Approach</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-tools text-primary me-2"></i> Common service interfaces across providers</li>
+                                        <li><i class="bi bi-tools text-primary me-2"></i> Standardized deployment patterns</li>
+                                        <li><i class="bi bi-tools text-primary me-2"></i> Unified monitoring and management</li>
+                                        <li><i class="bi bi-tools text-primary me-2"></i> Consistent security controls</li>
+                                        <li><i class="bi bi-tools text-primary me-2"></i> Portable workload definitions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Global Deployment</h4>
+                    <p>One of Hyperforce's key advantages is its ability to deploy Salesforce services in regions where Salesforce previously had no infrastructure. This global reach enables Salesforce to meet data residency requirements and serve customers in countries with strict data sovereignty laws.</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore Hyperforce Global Deployment</h5>
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="text-primary"><i class="bi bi-globe"></i></h3>
+                                        <h5 class="card-title">20+</h5>
+                                        <p class="card-text">Global regions with Hyperforce availability</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="text-primary"><i class="bi bi-cloud-check"></i></h3>
+                                        <h5 class="card-title">Multiple</h5>
+                                        <p class="card-text">Public cloud providers supported</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="text-primary"><i class="bi bi-shield-check"></i></h3>
+                                        <h5 class="card-title">Comprehensive</h5>
+                                        <p class="card-text">Regional compliance certifications</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-container text-center mt-3">
+                            <p class="text-muted">Interactive map showing Hyperforce availability regions would be displayed here</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="quiz-container">
                     <h4>Quick Check</h4>
-                    <p>Which of the following is a key goal of Hyperforce?</p>
+                    <p>Which of the following is NOT one of the architectural principles of Hyperforce?</p>
                     <div class="quiz-options">
-                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Reducing the number of available features</div>
-                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Meeting global data residency requirements</div>
-                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Eliminating multitenancy</div>
-                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Developing proprietary infrastructure hardware</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Infrastructure as Code</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Zero-Trust Security</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Single Cloud Provider</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Built-in Resilience</div>
                     </div>
                     <div class="quiz-feedback d-none"></div>
                 </div>
-            `
+            `,
+            challenges: [
+                "Research and create a detailed comparison of Salesforce's infrastructure approach before and after Hyperforce. What specific technical changes were made to enable multi-cloud deployment?",
+                "Design a hypothetical migration plan for moving a complex Salesforce implementation from traditional infrastructure to Hyperforce. Include key considerations, risks, and mitigation strategies.",
+                "Investigate how Hyperforce implements zero-trust security across different cloud providers. What common security patterns are employed, and how are they adapted to each provider's specific capabilities?",
+                "Explore the technical challenges of achieving consistent performance and reliability across multiple cloud providers. How does Hyperforce address variations in provider capabilities?",
+                "Create a visual representation of Hyperforce's global deployment, showing which cloud providers are used in different regions and explaining the rationale for these choices.",
+                "Analyze the economic implications of Hyperforce for both Salesforce and its customers. How does the multi-cloud approach impact costs, pricing models, and long-term infrastructure strategy?",
+                "Examine how Hyperforce supports data residency requirements in different regulatory regimes. Choose three specific countries with strict data sovereignty laws and explain how Hyperforce enables compliance.",
+                "Investigate how Hyperforce's 'Fully Observable' principle is implemented technically. What monitoring tools, metrics, and practices are used to maintain visibility across a distributed multi-cloud infrastructure?",
+                "Compare Hyperforce's approach to multi-cloud deployment with other enterprise SaaS platforms. What unique aspects of Salesforce's approach differentiate it from competitors?",
+                "Design a dashboard for monitoring Hyperforce deployments, identifying the key metrics and indicators that would be most valuable for both operations teams and business stakeholders."
+            ]
         },
         {
             id: 4,
