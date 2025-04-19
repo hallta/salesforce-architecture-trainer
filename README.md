@@ -68,10 +68,12 @@ salesforce-architecture-trainer/
 │   ├── base.html           # Base template with common structure
 │   ├── index.html          # Module grid view
 │   └── module.html         # Individual module view
-├── static/                 # Static assets (CSS, JS, images)
+├── static/                 # Static assets (CSS, JS, images) - will be created when needed
 ├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
+
+Note: The original JavaScript files (app.js, styles.css, and the root index.html) have been removed as they're no longer needed after conversion to Python Flask.
 
 ## Creating a requirements.txt File
 
@@ -121,6 +123,24 @@ For production deployment:
 2. Configure HTTPS to secure user connections
 
 3. Consider adding user authentication if needed
+
+## Documentation
+
+The project includes comprehensive documentation:
+
+- **README.md**: Main documentation file (this file)
+- **CONTRIBUTING.md**: Guidelines for contributing to the project
+- **CHANGELOG.md**: Version history and changes
+- **templates/README.md**: Documentation for the templates directory
+- **static/README.md**: Documentation for the static assets directory
+
+Each Python function in `app.py` is documented with docstrings.
+
+## Version History
+
+Current version: 1.0.0
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed version history.
 
 ## License
 

@@ -1,9 +1,21 @@
+"""
+Salesforce Architecture Trainer - Flask Application
+
+This Flask application serves educational content about Salesforce's platform architecture.
+It provides a series of modules with explanatory content, quizzes, and challenges.
+User progress is tracked using Flask sessions.
+
+Author: Salesforce Architecture Team
+Version: 1.0.0
+"""
+
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import json
 import os
 from datetime import datetime, timedelta
 import argparse
 
+# Initialize Flask application
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'salesforce-architecture-trainer-secret')
 app.permanent_session_lifetime = timedelta(days=7)
@@ -127,19 +139,42 @@ modules = [
     # Additional modules would be defined here
 ]
 
-# Load all modules data
 def get_all_modules():
+    """
+    Returns all available modules.
+    
+    Returns:
+        list: A list of module dictionaries containing id, title, icon, summary, content, and challenges.
+    """
     return modules
 
-# Get a specific module by ID
 def get_module(module_id):
+    """
+    Retrieves a specific module by its ID.
+    
+    Args:
+        module_id (int): The ID of the module to retrieve.
+        
+    Returns:
+        dict: The module dictionary if found, None otherwise.
+    """
     for module in modules:
         if module["id"] == module_id:
             return module
     return None
 
-# Initialize user progress
 def init_user_progress():
+    """
+    Initializes or retrieves the user's progress from the session.
+    
+    The user progress object contains:
+    - completed_modules: List of module IDs the user has completed
+    - current_module: ID of the module the user is currently viewing
+    - last_visited: Timestamp of the user's last activity
+    
+    Returns:
+        dict: The user progress dictionary.
+    """
     if 'user_progress' not in session:
         session['user_progress'] = {
             'completed_modules': [],
@@ -148,8 +183,17 @@ def init_user_progress():
         }
     return session['user_progress']
 
-# Update user progress
 def update_user_progress(module_id=None, completed=False):
+    """
+    Updates the user's progress in the session.
+    
+    Args:
+        module_id (int, optional): The ID of the module to update as current. Defaults to None.
+        completed (bool, optional): Whether to mark the module as completed. Defaults to False.
+        
+    Returns:
+        dict: The updated user progress dictionary.
+    """
     user_progress = init_user_progress()
     
     # Update last visited timestamp
@@ -169,6 +213,13 @@ def update_user_progress(module_id=None, completed=False):
 # Routes
 @app.route('/')
 def index():
+    """
+    Route handler for the home page.
+    Displays a grid of all available modules with their status.
+    
+    Returns:
+        str: Rendered HTML template for the index page.
+    """
     user_progress = init_user_progress()
     modules_data = get_all_modules()
     return render_template('index.html', 
@@ -177,6 +228,17 @@ def index():
 
 @app.route('/module/<int:module_id>')
 def module_view(module_id):
+    """
+    Route handler for individual module pages.
+    Displays the content, quiz, and challenges for a specific module.
+    
+    Args:
+        module_id (int): The ID of the module to display.
+        
+    Returns:
+        str: Rendered HTML template for the module page.
+              Redirects to index if module not found.
+    """
     module = get_module(module_id)
     if not module:
         return redirect(url_for('index'))
@@ -193,16 +255,33 @@ def module_view(module_id):
 
 @app.route('/api/complete-module/<int:module_id>', methods=['POST'])
 def complete_module(module_id):
+    """
+    API endpoint to mark a module as completed.
+    
+    Args:
+        module_id (int): The ID of the module to mark as completed.
+        
+    Returns:
+        Response: JSON response indicating success.
+    """
     update_user_progress(module_id, completed=True)
     return jsonify({'success': True})
 
 @app.route('/api/reset-progress', methods=['POST'])
 def reset_progress():
+    """
+    API endpoint to reset all user progress.
+    Removes the user_progress object from the session.
+    
+    Returns:
+        Response: JSON response indicating success.
+    """
     if 'user_progress' in session:
         session.pop('user_progress')
     return jsonify({'success': True})
 
 if __name__ == '__main__':
+    # Parse command line arguments
     parser = argparse.ArgumentParser(description='Run the Salesforce Architecture Trainer Flask app')
     parser.add_argument('--host', default='127.0.0.1', help='Host to run the app on')
     parser.add_argument('--port', type=int, default=5001, help='Port to run the app on')
