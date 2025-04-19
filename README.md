@@ -1,148 +1,100 @@
-# PlatformPro - Salesforce Platform Training Portal
+# Salesforce Architecture Trainer
 
-![PlatformPro Logo](assets/logo.png)
-
-A modern, cohort-based training platform for learning the Salesforce Platform architecture and capabilities.
+A client-side web application designed to help users learn about Salesforce's platform transformation through interactive modules based on the [Salesforce Architecture Fundamentals blog](https://architect.salesforce.com/fundamentals/platform-transformation).
 
 ## Features
 
-- 🎯 Personalized Learning Paths for Different Cohorts:
-  - Software Engineers
-  - Product Managers
-  - Sales Professionals
-  - General Interest
-- 📚 14 Comprehensive Training Modules
-- ✅ Interactive Quizzes and Progress Tracking
-- 🎨 Modern, Responsive UI
-- 🔐 Secure User Authentication
-- 📊 Progress Analytics
+- 19 engaging learning modules that correspond to chapters from the Salesforce Architecture blog
+- Interactive elements including quizzes, expandable sections, and exploration tools
+- Progress tracking within the browser session
+- Dark/light theme toggle
+- Responsive design for mobile and desktop
+- Fluid animations and transitions
 
 ## Tech Stack
 
-- **Backend**: Python 3.11+ with FastAPI
-- **Database**: PostgreSQL
-- **Frontend**: React + TypeScript
-- **Styling**: Tailwind CSS
-- **Testing**: pytest (backend), Jest (frontend)
-- **Documentation**: OpenAPI/Swagger, JSDoc
-- **Authentication**: JWT-based
+- HTML5
+- CSS3 with CSS Variables
+- JavaScript (Vanilla)
+- Bootstrap 5 for layout and components
+- Bootstrap Icons
+- Marked.js for Markdown rendering
 
 ## Getting Started
 
-### Prerequisites
+### Option 1: Direct File Opening (Simplest)
 
-- Python 3.11+
-- Node.js 18+
-- PostgreSQL 14+
-- Docker (optional)
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/salesforce-architecture-trainer.git
+   cd salesforce-architecture-trainer
+   ```
+2. Open `index.html` directly in your web browser
 
-### Local Development Setup
+### Option 2: Using a Local Server (Recommended)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/platformpro.git
+Using a local server is recommended for the best experience as it allows all features to work properly.
+
+#### Using Python (pre-installed on most macOS/Linux systems)
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/salesforce-architecture-trainer.git
    cd salesforce-architecture-trainer
    ```
 
-2. Set up backend:
-   ```bash
-   # Create and activate Python virtual environment
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-   
-   # Install backend dependencies
-   cd backend
-   pip install -r requirements.txt
-   
-   # Set up environment variables
-   cp .env.example .env
-   # Edit .env with your configuration
+2. Start a simple HTTP server:
+   - Python 3:
+     ```
+     python -m http.server 8000
+     ```
+   - Python 2:
+     ```
+     python -m SimpleHTTPServer 8000
+     ```
+
+3. Open your browser and navigate to:
+   ```
+   http://localhost:8000
    ```
 
-3. Set up frontend:
-   ```bash
-   cd ../frontend
-   npm install
+#### Using Node.js (if you have Node.js installed)
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/salesforce-architecture-trainer.git
+   cd salesforce-architecture-trainer
    ```
 
-4. Start the development servers:
-   ```bash
-   # Terminal 1 - Backend
-   # Make sure you're in the backend directory and virtual environment is activated
-   cd backend
-   uvicorn main:app --reload
-
-   # Terminal 2 - Frontend
-   # Make sure you're in the frontend directory
-   cd frontend
-   npm run dev
+2. Install a simple HTTP server:
+   ```
+   npm install -g http-server
    ```
 
-### Running Tests
+3. Run the server:
+   ```
+   http-server -p 8000
+   ```
 
-```bash
-# Backend tests
-# Make sure you're in the backend directory and virtual environment is activated
-cd backend
-pytest
+4. Open your browser and navigate to:
+   ```
+   http://localhost:8000
+   ```
 
-# Frontend tests
-# Make sure you're in the frontend directory
-cd frontend
-npm test
-```
+## Structure
 
-## Project Structure
+- `index.html` - Main HTML structure
+- `styles.css` - Custom styling with animations and theming
+- `app.js` - Application logic and module content
 
-```
-salesforce-architecture-trainer/
-├── backend/
-│   ├── app/
-│   ├── migrations/
-│   ├── tests/
-│   ├── alembic.ini
-│   ├── main.py
-│   ├── requirements.txt
-│   └── .env.example
-├── frontend/
-│   └── src/
-│       └── components/
-│           ├── Layout.tsx
-│           └── ProtectedRoute.tsx
-└── README.md
-```
+## Usage
 
-The project is organized into two main directories:
-
-### Backend
-- `app/`: Core application logic and API endpoints
-- `migrations/`: Database migration files managed by Alembic
-- `tests/`: Test suite for backend functionality
-- `alembic.ini`: Alembic configuration for database migrations
-- `main.py`: FastAPI application entry point
-- `requirements.txt`: Python dependencies
-- `.env.example`: Example environment variables template
-
-### Frontend
-- `src/components/`: React components including layout and authentication
-  - `Layout.tsx`: Main application layout with navigation
-  - `ProtectedRoute.tsx`: Authentication wrapper component
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- Browse the 19 modules on the home screen
+- Click on any module to start learning
+- Navigate between modules using the next/previous buttons
+- Check your progress using the progress button in the header
+- Toggle between light and dark themes with the theme button
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Salesforce Platform Architecture documentation
-- FastAPI framework
-- React and the React community
-- Tailwind CSS team
+MIT
