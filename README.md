@@ -72,18 +72,39 @@ A modern, cohort-based training platform for learning the Salesforce Platform ar
    cd backend
    pip install -r requirements.txt
    
+   # Create required directories
+   mkdir -p static  # Create directory for static files
+   
    # Set up environment variables
    cp .env.example .env
    # Edit .env with your configuration
    ```
 
-3. Set up frontend:
+3. Set up database:
+   ```bash
+   # Start PostgreSQL service if not already running
+   # On macOS with Homebrew:
+   brew services start postgresql
+   # On Linux:
+   sudo service postgresql start
+   # On Windows:
+   # Start PostgreSQL via Services app
+   
+   # Create database (run in terminal)
+   psql -U postgres -c "CREATE DATABASE platformpro"
+   
+   # Run database migrations
+   cd backend  # Make sure you're in the backend directory
+   alembic upgrade head
+   ```
+
+4. Set up frontend:
    ```bash
    cd ../frontend
    npm install
    ```
 
-4. Start the development servers:
+5. Start the development servers:
    ```bash
    # Terminal 1 - Backend
    # Make sure you're in the backend directory and virtual environment is activated
