@@ -852,7 +852,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="card h-100 flow-card" onclick="selectFlowType(this, 'record')">
                                     <div class="card-body">
                                         <h6 class="card-title"><i class="bi bi-database me-2"></i>Record-Triggered Flows</h6>
-                                        <p class="card-text">Automated processes that start when records are created, updated, or deleted, handling complex business logic.</p>
+                                        <p class="card-text">Automated processes that start when records are created, updated, or deleted. Key features include:</p>
+                                        <ul>
+                                            <li>Before-save and after-save execution options</li>
+                                            <li>Record-level filtering conditions</li>
+                                            <li>Access to previous and current record values</li>
+                                            <li>Efficient processing of related records</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1071,7 +1077,95 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Developer Experience',
             icon: 'bi-code',
             summary: 'Understand the tools and frameworks for developers on the Salesforce Platform.',
-            content: `<h2>Developer Experience</h2><p>Detailed content about Developer Experience will be provided here.</p>`
+            content: `
+                <h2>Developer Experience</h2>
+                <div class="module-section">
+                    <p>The Salesforce Platform provides a comprehensive set of tools and frameworks that enable developers to build applications efficiently. Modern developer experience focuses on productivity, flexibility, and collaboration across diverse development teams.</p>
+                    
+                    <div class="key-highlight">
+                        <h5>Key Developer Experience Elements</h5>
+                        <ul>
+                            <li><strong>Development Tools:</strong> IDE extensions, CLI, and low-code builders</li>
+                            <li><strong>Frameworks:</strong> Lightning Web Components and Apex</li>
+                            <li><strong>DevOps:</strong> Source control, CI/CD, and deployment tools</li>
+                            <li><strong>Package Development:</strong> Modular development with managed packages</li>
+                            <li><strong>Testing:</strong> Automated testing frameworks for code quality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Development Environments</h4>
+                    <p>Salesforce provides multiple development environment options:</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore Development Environments</h5>
+                        <div class="nav nav-tabs" id="dev-env-tab" role="tablist">
+                            <button class="nav-link active" id="devspaces-tab" data-bs-toggle="tab" data-bs-target="#devspaces" type="button" role="tab">Developer Spaces</button>
+                            <button class="nav-link" id="scratch-tab" data-bs-toggle="tab" data-bs-target="#scratch" type="button" role="tab">Scratch Orgs</button>
+                            <button class="nav-link" id="sandbox-tab" data-bs-toggle="tab" data-bs-target="#sandbox" type="button" role="tab">Sandboxes</button>
+                            <button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab">Local Development</button>
+                        </div>
+                        <div class="tab-content p-3 border border-top-0 rounded-bottom">
+                            <div class="tab-pane fade show active" id="devspaces" role="tabpanel">
+                                <p>Cloud-based development environments with pre-configured tools, eliminating local setup and ensuring consistent experiences across teams.</p>
+                            </div>
+                            <div class="tab-pane fade" id="scratch" role="tabpanel">
+                                <p>Source-driven, ephemeral environments for development and automated testing, ideal for modern development workflows.</p>
+                            </div>
+                            <div class="tab-pane fade" id="sandbox" role="tabpanel">
+                                <p>Copies of production environments at different scales (Developer, Developer Pro, Partial, Full) for development and testing.</p>
+                            </div>
+                            <div class="tab-pane fade" id="local" role="tabpanel">
+                                <p>Local development capabilities with VS Code and Salesforce Extensions, enabling offline development and standard developer workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Development Frameworks</h4>
+                    <p>Salesforce provides multiple frameworks for application development:</p>
+                    <ul>
+                        <li><strong>Lightning Web Components:</strong> Modern, standards-based JavaScript framework for UI development</li>
+                        <li><strong>Apex:</strong> Strongly-typed, object-oriented server-side language similar to Java</li>
+                        <li><strong>Visualforce:</strong> MVC framework for building traditional web UIs</li>
+                        <li><strong>SOQL and SOSL:</strong> Specialized query languages for data retrieval</li>
+                        <li><strong>Flow:</strong> Low-code automation framework with programmatic extensibility</li>
+                    </ul>
+                </div>
+
+                <div class="module-section">
+                    <h4>DevOps and CI/CD</h4>
+                    <p>Modern application development on Salesforce embraces DevOps practices:</p>
+                    <ul>
+                        <li><strong>Salesforce CLI:</strong> Command-line interface for automating development tasks</li>
+                        <li><strong>Source Control:</strong> Git integration for version control and collaboration</li>
+                        <li><strong>CI/CD:</strong> Automated testing, validation, and deployment pipelines</li>
+                        <li><strong>DevOps Center:</strong> UI-based tool for managing the release process</li>
+                        <li><strong>Change Sets:</strong> Declarative tool for moving changes between environments</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4>Quick Check</h4>
+                    <p>Which of the following is Salesforce's modern JavaScript framework for UI development?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Aura Components</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Lightning Web Components</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Visualforce</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">React Components</div>
+                    </div>
+                    <div class="quiz-feedback d-none"></div>
+                </div>
+            `,
+            challenges: [
+                "Balancing the needs of professional developers and citizen developers",
+                "Supporting modern development practices while maintaining platform integrity",
+                "Managing dependencies and package versioning across organizations",
+                "Enabling local development for cloud-native applications",
+                "Integrating with diverse toolchains and development environments"
+            ]
         },
         {
             id: 12,
@@ -1085,6 +1179,711 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Integrating acquisitions into a coherent platform architecture",
                 "Balancing innovation speed with enterprise-grade reliability",
                 "Meeting diverse needs across different industries and customer sizes"
+            ]
+        },
+        {
+            id: 13,
+            title: 'Industry-Specific Solutions',
+            icon: 'bi-building',
+            summary: 'Learn about Salesforce\'s vertical solutions for specific industries and their architectural foundations.',
+            content: `
+                <h2>Industry-Specific Solutions</h2>
+                <div class="module-section">
+                    <p>Salesforce has evolved from a horizontal CRM platform to offering deep vertical solutions for specific industries. These industry clouds extend the standard platform with specialized data models, business processes, and AI capabilities tailored to industry requirements.</p>
+                    
+                    <div class="key-highlight">
+                        <h5>Key Industry Solutions</h5>
+                        <ul>
+                            <li><strong>Financial Services Cloud:</strong> Banking, insurance, and wealth management solutions</li>
+                            <li><strong>Health Cloud:</strong> Patient care and healthcare relationship management</li>
+                            <li><strong>Manufacturing Cloud:</strong> Sales agreements, account forecasting, and revenue visibility</li>
+                            <li><strong>Consumer Goods Cloud:</strong> Retail execution and trade promotion management</li>
+                            <li><strong>Education Cloud:</strong> Student success and institution management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Industry Cloud Approach</h4>
+                    <p>Salesforce's industry solutions are built with these architectural principles:</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore Industry Cloud Architecture</h5>
+                        <div class="accordion" id="industryArchitecture">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indArch1">
+                                        Core Platform Extension
+                                    </button>
+                                </h2>
+                                <div id="indArch1" class="accordion-collapse collapse" data-bs-parent="#industryArchitecture">
+                                    <div class="accordion-body">
+                                        <p>Industry clouds extend the core platform with specialized objects, fields, and relationships that model industry-specific entities and processes. This approach ensures that industry solutions benefit from all platform capabilities like security, analytics, and mobility.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indArch2">
+                                        Pre-Built Business Processes
+                                    </button>
+                                </h2>
+                                <div id="indArch2" class="accordion-collapse collapse" data-bs-parent="#industryArchitecture">
+                                    <div class="accordion-body">
+                                        <p>Industry solutions include pre-built workflows, approval processes, and automated business processes that reflect industry best practices. These processes can be customized to match specific organizational requirements while maintaining compliance with industry standards.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indArch3">
+                                        Industry AppExchange Ecosystem
+                                    </button>
+                                </h2>
+                                <div id="indArch3" class="accordion-collapse collapse" data-bs-parent="#industryArchitecture">
+                                    <div class="accordion-body">
+                                        <p>Each industry cloud has a dedicated ecosystem of partner-built applications and components that extend the core functionality. These pre-built integrations allow organizations to quickly implement specialized capabilities like document generation, specialized calculations, or third-party data integrations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indArch4">
+                                        Regulatory Compliance
+                                    </button>
+                                </h2>
+                                <div id="indArch4" class="accordion-collapse collapse" data-bs-parent="#industryArchitecture">
+                                    <div class="accordion-body">
+                                        <p>Industry clouds incorporate compliance frameworks and data protection capabilities specific to industry regulations like HIPAA, GDPR, and FINRA. These features help organizations maintain regulatory compliance while still benefiting from cloud technology innovations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Industry-Specific AI</h4>
+                    <p>Salesforce has developed specialized AI models for industry-specific use cases:</p>
+                    <ul>
+                        <li><strong>Financial Services:</strong> Intelligent needs-based referrals and next best actions</li>
+                        <li><strong>Healthcare:</strong> Care gap prediction and social determinants of health insights</li>
+                        <li><strong>Manufacturing:</strong> Demand forecasting and supply chain optimization</li>
+                        <li><strong>Retail:</strong> Personalized shopping experiences and inventory optimization</li>
+                        <li><strong>Public Sector:</strong> Constituent service recommendation and program eligibility</li>
+                    </ul>
+                </div>
+
+                <div class="module-section">
+                    <h4>Architectural Considerations</h4>
+                    <p>When implementing industry solutions, organizations should consider:</p>
+                    <ul>
+                        <li><strong>Data Model Extensions:</strong> Balancing standard and custom objects</li>
+                        <li><strong>Integration with Legacy Systems:</strong> Connecting with industry-specific systems</li>
+                        <li><strong>Regulatory Guardrails:</strong> Ensuring compliance with industry regulations</li>
+                        <li><strong>Specialized User Experience:</strong> Tailoring interfaces for industry roles</li>
+                        <li><strong>Industry Data Standards:</strong> Supporting standard data formats and protocols</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4>Quick Check</h4>
+                    <p>Which of the following is a key benefit of using Salesforce Industry Clouds?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Completely replacing the core Salesforce platform</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Pre-built industry-specific data models and processes</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Elimination of the need for any customization</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Lower security requirements for regulated industries</div>
+                    </div>
+                    <div class="quiz-feedback d-none"></div>
+                </div>
+            `,
+            challenges: [
+                "Adapting to diverse regulatory requirements across global regions",
+                "Balancing industry standardization with organization-specific customizations",
+                "Integrating with specialized legacy systems common in established industries",
+                "Supporting industry-specific business processes while maintaining platform benefits",
+                "Keeping pace with evolving industry regulations and standards"
+            ]
+        },
+        {
+            id: 14,
+            title: 'Analytics',
+            icon: 'bi-bar-chart',
+            summary: 'Explore Salesforce\'s analytics capabilities from basic reports to advanced AI-powered insights.',
+            content: `
+                <h2>Analytics</h2>
+                <div class="module-section">
+                    <p>Analytics is a core capability of the Salesforce Platform, enabling organizations to gain insights from their data to drive better business decisions. Salesforce's analytics offerings range from simple reports and dashboards to sophisticated AI-powered predictive analytics.</p>
+                    
+                    <div class="key-highlight">
+                        <h5>Key Analytics Capabilities</h5>
+                        <ul>
+                            <li><strong>Reports and Dashboards:</strong> Operational reporting on transactional data</li>
+                            <li><strong>Tableau CRM:</strong> Advanced analytics and data visualization</li>
+                            <li><strong>Einstein Analytics:</strong> AI-powered insights and predictions</li>
+                            <li><strong>Data Cloud:</strong> Unified analytics across all data sources</li>
+                            <li><strong>Embedded Analytics:</strong> Insights integrated into business processes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Analytics Spectrum</h4>
+                    <p>Salesforce provides a spectrum of analytics capabilities for different needs:</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore Analytics Types</h5>
+                        <div class="nav nav-pills mb-3" id="analytics-tab" role="tablist">
+                            <button class="nav-link active" id="descriptive-tab" data-bs-toggle="tab" data-bs-target="#descriptive" type="button" role="tab">Descriptive</button>
+                            <button class="nav-link" id="diagnostic-tab" data-bs-toggle="tab" data-bs-target="#diagnostic" type="button" role="tab">Diagnostic</button>
+                            <button class="nav-link" id="predictive-tab" data-bs-toggle="tab" data-bs-target="#predictive" type="button" role="tab">Predictive</button>
+                            <button class="nav-link" id="prescriptive-tab" data-bs-toggle="tab" data-bs-target="#prescriptive" type="button" role="tab">Prescriptive</button>
+                        </div>
+                        <div class="tab-content p-3 border rounded">
+                            <div class="tab-pane fade show active" id="descriptive" role="tabpanel">
+                                <p><strong>Descriptive Analytics</strong> shows what has happened through reports, dashboards, and visualizations. Salesforce's Reports and Dashboards provide operational visibility into business data, while Tableau enables more advanced visualizations and interactive analysis.</p>
+                            </div>
+                            <div class="tab-pane fade" id="diagnostic" role="tabpanel">
+                                <p><strong>Diagnostic Analytics</strong> helps understand why something happened through drill-down analysis and correlation discovery. Tableau CRM enables users to explore relationships between different metrics and dimensions to uncover root causes of business trends.</p>
+                            </div>
+                            <div class="tab-pane fade" id="predictive" role="tabpanel">
+                                <p><strong>Predictive Analytics</strong> forecasts what might happen through machine learning models. Einstein Discovery automatically analyzes data patterns to predict outcomes like churn risk, deal close probability, or service escalations.</p>
+                            </div>
+                            <div class="tab-pane fade" id="prescriptive" role="tabpanel">
+                                <p><strong>Prescriptive Analytics</strong> recommends actions to optimize outcomes. Einstein Next Best Action combines predictive models with business rules to suggest specific actions users should take to achieve desired results.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Analytics Architecture</h4>
+                    <p>Salesforce's analytics architecture includes several key components:</p>
+                    <ul>
+                        <li><strong>Data Preparation:</strong> Tools for cleaning, transforming, and combining data</li>
+                        <li><strong>Data Storage:</strong> Optimized storage for analytical processing</li>
+                        <li><strong>Processing Engine:</strong> High-performance query and calculation capabilities</li>
+                        <li><strong>Visualization Layer:</strong> Interactive charts, dashboards, and stories</li>
+                        <li><strong>AI/ML Services:</strong> Automated model building and scoring</li>
+                        <li><strong>Embedding Framework:</strong> Capabilities to integrate analytics into applications</li>
+                    </ul>
+                </div>
+
+                <div class="module-section">
+                    <h4>Data Cloud Analytics</h4>
+                    <p>Data Cloud represents the evolution of Salesforce analytics, providing:</p>
+                    <ul>
+                        <li>Unified data foundation across Salesforce and external sources</li>
+                        <li>Real-time analytics capabilities for streaming data</li>
+                        <li>Advanced data modeling with SQL and Python</li>
+                        <li>Direct integration with AI models and applications</li>
+                        <li>Scaled performance for massive datasets</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4>Quick Check</h4>
+                    <p>Which type of analytics helps forecast what might happen in the future?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Descriptive Analytics</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Diagnostic Analytics</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Predictive Analytics</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Prescriptive Analytics</div>
+                    </div>
+                    <div class="quiz-feedback d-none"></div>
+                </div>
+            `,
+            challenges: [
+                "Integrating data from multiple sources while maintaining data quality",
+                "Scaling analytics capabilities to handle growing data volumes",
+                "Making advanced analytics accessible to business users",
+                "Ensuring analytical insights lead to actionable outcomes",
+                "Maintaining performance while processing complex analytical queries"
+            ]
+        },
+        {
+            id: 15,
+            title: 'Integration',
+            icon: 'bi-arrows-angle-contract',
+            summary: 'Learn about Salesforce\'s integration capabilities for connecting with other systems and data sources.',
+            content: `<h2>Integration</h2><p>Detailed content about Integration will be provided here.</p>`,
+            challenges: [
+                "Managing the growing complexity of integration scenarios",
+                "Ensuring data consistency across connected systems",
+                "Balancing real-time integration needs with system performance",
+                "Maintaining security across integration points",
+                "Governing the proliferation of APIs and integrations"
+            ]
+        },
+        {
+            id: 16,
+            title: 'Ecosystem And AppExchange',
+            icon: 'bi-plugin',
+            summary: 'Explore Salesforce\'s partner ecosystem and marketplace for extensions and applications.',
+            content: `
+                <h2>Ecosystem And AppExchange</h2>
+                <div class="module-section">
+                    <p>The Salesforce ecosystem is a critical component of the platform's success, with a vast network of partners, developers, and customers who create and share solutions. At the center of this ecosystem is AppExchange, the world's leading enterprise cloud marketplace, providing a platform for discovering, evaluating, and installing pre-built applications and components.</p>
+                    
+                    <div class="key-highlight">
+                        <h5>Key Ecosystem Elements</h5>
+                        <ul>
+                            <li><strong>AppExchange Marketplace:</strong> Over 7,000 solutions across industries and use cases</li>
+                            <li><strong>Partner Program:</strong> ISVs, consulting partners, and system integrators</li>
+                            <li><strong>Developer Community:</strong> Over 10 million members building on the platform</li>
+                            <li><strong>Trailhead:</strong> Learning platform for Salesforce skills development</li>
+                            <li><strong>Open Source Community:</strong> Sharing of tools, frameworks, and best practices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>AppExchange Solutions</h4>
+                    <p>AppExchange offers various solution types to extend the Salesforce Platform:</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore AppExchange Solution Types</h5>
+                        <div class="nav nav-tabs" id="app-exchange-tab" role="tablist">
+                            <button class="nav-link active" id="apps-tab" data-bs-toggle="tab" data-bs-target="#apps" type="button" role="tab">Apps</button>
+                            <button class="nav-link" id="components-tab" data-bs-toggle="tab" data-bs-target="#components" type="button" role="tab">Components</button>
+                            <button class="nav-link" id="bolt-tab" data-bs-toggle="tab" data-bs-target="#bolt" type="button" role="tab">Bolt Solutions</button>
+                            <button class="nav-link" id="consultants-tab" data-bs-toggle="tab" data-bs-target="#consultants" type="button" role="tab">Consultants</button>
+                        </div>
+                        <div class="tab-content p-3 border border-top-0 rounded-bottom">
+                            <div class="tab-pane fade show active" id="apps" role="tabpanel">
+                                <p><strong>Apps</strong> are complete applications that provide specific functionality. These range from small utilities to enterprise-grade solutions for specific business processes. Apps can be installed into Salesforce organizations and typically include multiple components, data models, and business logic.</p>
+                            </div>
+                            <div class="tab-pane fade" id="components" role="tabpanel">
+                                <p><strong>Components</strong> are reusable building blocks that can be assembled into custom applications. These include Lightning components, flow templates, dashboards, and data connectors. Components accelerate development by providing pre-built functionality that can be configured and combined.</p>
+                            </div>
+                            <div class="tab-pane fade" id="bolt" role="tabpanel">
+                                <p><strong>Bolt Solutions</strong> are pre-built templates for Experience Cloud sites (formerly Communities). These provide industry-specific or use case-specific portal templates with pre-configured pages, components, and branding that can be customized and deployed quickly.</p>
+                            </div>
+                            <div class="tab-pane fade" id="consultants" role="tabpanel">
+                                <p><strong>Consultants</strong> are implementation partners who provide services for specific industries, products, or use cases. The AppExchange includes a directory of certified consulting partners with reviews, specializations, and contact information to help customers find the right implementation assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>AppExchange Architecture</h4>
+                    <p>Solutions on AppExchange are architected with these principles:</p>
+                    <ul>
+                        <li><strong>Packaging Framework:</strong> Managed packages for encapsulating solutions</li>
+                        <li><strong>Namespacing:</strong> Preventing conflicts between packaged components</li>
+                        <li><strong>Upgrade Mechanisms:</strong> Seamless upgrades without disrupting configurations</li>
+                        <li><strong>Security Review:</strong> Rigorous assessment of security best practices</li>
+                        <li><strong>Compatibility:</strong> Testing across Salesforce releases and configurations</li>
+                    </ul>
+                </div>
+
+                <div class="module-section">
+                    <h4>Partner Program</h4>
+                    <p>The Salesforce partner ecosystem includes several key participant types:</p>
+                    <ul>
+                        <li><strong>ISV Partners:</strong> Build and sell applications on AppExchange</li>
+                        <li><strong>Consulting Partners:</strong> Implement Salesforce and custom solutions</li>
+                        <li><strong>OEM Partners:</strong> Embed Salesforce platform within their own offerings</li>
+                        <li><strong>Technology Partners:</strong> Integrate their technologies with Salesforce</li>
+                        <li><strong>Industry Partners:</strong> Provide specialized industry solutions</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4>Quick Check</h4>
+                    <p>What is the name of Salesforce's marketplace for pre-built applications and components?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">AppExchange</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">App Store</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Salesforce Marketplace</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Force.com Exchange</div>
+                    </div>
+                    <div class="quiz-feedback d-none"></div>
+                </div>
+            `,
+            challenges: [
+                "Ensuring quality and security across thousands of partner solutions",
+                "Managing compatibility with platform evolution and updates",
+                "Balancing partner innovation with platform governance",
+                "Scaling ecosystem support across a growing partner base",
+                "Providing consistent customer experiences across ecosystem offerings"
+            ]
+        },
+        {
+            id: 17,
+            title: 'Salesforce On Salesforce',
+            icon: 'bi-infinity',
+            summary: 'Learn how Salesforce uses its own platform to run its business and drive innovation.',
+            content: `
+                <h2>Salesforce On Salesforce</h2>
+                <div class="module-section">
+                    <p>Salesforce is one of the largest users of its own platform, running critical business operations on the same technology it provides to customers. This "Salesforce on Salesforce" approach provides both a powerful proof point for the platform's capabilities and a testbed for continuous innovation.</p>
+                    
+                    <div class="key-highlight">
+                        <h5>Key Aspects of Salesforce on Salesforce</h5>
+                        <ul>
+                            <li><strong>Sales Operations:</strong> Managing sales processes with Sales Cloud</li>
+                            <li><strong>Customer Support:</strong> Providing service with Service Cloud</li>
+                            <li><strong>Marketing:</strong> Driving campaigns with Marketing Cloud</li>
+                            <li><strong>Internal Applications:</strong> Building custom apps for employee needs</li>
+                            <li><strong>Product Development:</strong> Using the platform to build new products</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Internal Use Cases</h4>
+                    <p>Salesforce uses its own platform in innovative ways across the organization:</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore Internal Use Cases</h5>
+                        <div class="accordion" id="internalUseCases">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#useCase1">
+                                        Sales and Revenue Operations
+                                    </button>
+                                </h2>
+                                <div id="useCase1" class="accordion-collapse collapse" data-bs-parent="#internalUseCases">
+                                    <div class="accordion-body">
+                                        <p>Salesforce manages its entire global sales operation on Sales Cloud, including opportunity management, forecasting, territory planning, and sales enablement. The sales process is heavily automated with Einstein AI providing predictive lead scoring, opportunity insights, and forecasting accuracy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#useCase2">
+                                        Customer Success and Support
+                                    </button>
+                                </h2>
+                                <div id="useCase2" class="accordion-collapse collapse" data-bs-parent="#internalUseCases">
+                                    <div class="accordion-body">
+                                        <p>Salesforce's customer support organization uses Service Cloud to manage cases, knowledge, and entitlements. The support operation handles millions of cases annually, using AI-powered case routing, knowledge recommendations, and automated solution suggestions to maximize efficiency.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#useCase3">
+                                        Employee Experience
+                                    </button>
+                                </h2>
+                                <div id="useCase3" class="accordion-collapse collapse" data-bs-parent="#internalUseCases">
+                                    <div class="accordion-body">
+                                        <p>Salesforce has built numerous employee-facing applications on the platform, including Concierge for IT services, Aloha for employee onboarding, and systems for procurement, legal requests, and facilities management. These applications use Flow, Lightning Web Components, and Einstein to provide seamless employee experiences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#useCase4">
+                                        Product Development
+                                    </button>
+                                </h2>
+                                <div id="useCase4" class="accordion-collapse collapse" data-bs-parent="#internalUseCases">
+                                    <div class="accordion-body">
+                                        <p>Many Salesforce products are built on the platform itself. For example, Field Service was developed as a managed package on the Salesforce Platform before becoming a core product. This approach accelerates development while ensuring products leverage all platform capabilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Innovation Cycle</h4>
+                    <p>The Salesforce on Salesforce approach creates a virtuous innovation cycle:</p>
+                    <ul>
+                        <li><strong>Internal Needs:</strong> Identifying requirements from real business use cases</li>
+                        <li><strong>Prototype Development:</strong> Building initial solutions on the platform</li>
+                        <li><strong>Internal Deployment:</strong> Testing at scale within Salesforce operations</li>
+                        <li><strong>Refinement:</strong> Improving based on real-world feedback</li>
+                        <li><strong>Product Development:</strong> Transforming successful internal solutions into products</li>
+                    </ul>
+                </div>
+
+                <div class="module-section">
+                    <h4>Scale and Impact</h4>
+                    <p>Salesforce's internal usage demonstrates the platform's enterprise capabilities:</p>
+                    <ul>
+                        <li>Supporting 90,000+ employees globally</li>
+                        <li>Processing millions of customer interactions</li>
+                        <li>Managing complex, billion-dollar sales processes</li>
+                        <li>Automating thousands of internal business processes</li>
+                        <li>Providing insights across the entire business operation</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4>Quick Check</h4>
+                    <p>What is a key benefit of the "Salesforce on Salesforce" approach?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Reducing the need for customer feedback</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Eliminating the need for third-party solutions</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Creating a virtuous cycle of innovation based on real-world usage</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Simplifying the platform to only include Salesforce's internal needs</div>
+                    </div>
+                    <div class="quiz-feedback d-none"></div>
+                </div>
+            `,
+            challenges: [
+                "Balancing internal requirements with customer-focused product development",
+                "Managing the complexity of large-scale internal deployments",
+                "Ensuring security and compliance for sensitive internal data",
+                "Coordinating platform updates with critical internal business operations",
+                "Scaling internal support for thousands of employees using custom applications"
+            ]
+        },
+        {
+            id: 18,
+            title: 'Delivering Transformation At Scale',
+            icon: 'bi-arrows-fullscreen',
+            summary: 'Learn about Salesforce\'s approach to delivering large-scale platform transformations.',
+            content: `
+                <h2>Delivering Transformation At Scale</h2>
+                <div class="module-section">
+                    <p>Salesforce's platform transformation represents one of the most ambitious architectural evolutions ever undertaken in enterprise software. Successfully delivering this transformation required not only technical innovation but also a carefully orchestrated approach to change management, customer migration, and organizational alignment.</p>
+                    
+                    <div class="key-highlight">
+                        <h5>Key Transformation Principles</h5>
+                        <ul>
+                            <li><strong>Customer-First Design:</strong> Prioritizing customer needs in transformation decisions</li>
+                            <li><strong>Staged Migration:</strong> Gradual, phased approach to minimize disruption</li>
+                            <li><strong>Backward Compatibility:</strong> Ensuring existing customizations continue to work</li>
+                            <li><strong>Technical Guardrails:</strong> Architecture standards to guide the transformation</li>
+                            <li><strong>Continuous Delivery:</strong> Releasing changes incrementally rather than all at once</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Transformation Strategy</h4>
+                    <p>Salesforce adopted several key strategies to deliver this large-scale transformation:</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore Transformation Strategies</h5>
+                        <div class="accordion" id="transformationStrategies">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#strategy1">
+                                        Parallel Architecture
+                                    </button>
+                                </h2>
+                                <div id="strategy1" class="accordion-collapse collapse" data-bs-parent="#transformationStrategies">
+                                    <div class="accordion-body">
+                                        <p>Salesforce built the new platform architecture in parallel with the existing one, allowing for side-by-side comparison, testing, and gradual migration. This approach reduced risk by enabling validation and verification before customer migration and provided fallback options if issues were encountered.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#strategy2">
+                                        Dark Launching
+                                    </button>
+                                </h2>
+                                <div id="strategy2" class="accordion-collapse collapse" data-bs-parent="#transformationStrategies">
+                                    <div class="accordion-body">
+                                        <p>New platform components were initially deployed in a "dark launch" mode, where they operated in the background without being visible to customers. This allowed testing at production scale with real workloads before making the components active, ensuring reliability before customer exposure.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#strategy3">
+                                        Progressive Exposure
+                                    </button>
+                                </h2>
+                                <div id="strategy3" class="accordion-collapse collapse" data-bs-parent="#transformationStrategies">
+                                    <div class="accordion-body">
+                                        <p>New platform capabilities were introduced to customers incrementally, starting with pilot customers and internal users, then expanding to early adopters, and finally reaching the broader customer base. This approach allowed for feedback collection and refinement at each stage.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#strategy4">
+                                        Feature Toggles
+                                    </button>
+                                </h2>
+                                <div id="strategy4" class="accordion-collapse collapse" data-bs-parent="#transformationStrategies">
+                                    <div class="accordion-body">
+                                        <p>Salesforce implemented an extensive feature toggle system that allowed specific capabilities to be enabled or disabled at a granular level. This provided the ability to quickly roll back problematic features without affecting the entire platform and to customize the migration experience for different customer segments.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Organizational Approach</h4>
+                    <p>The transformation required significant organizational alignment:</p>
+                    <ul>
+                        <li><strong>Cross-Functional Teams:</strong> Bringing together product, engineering, operations, and support</li>
+                        <li><strong>Customer Success Groups:</strong> Dedicated teams to support customer migrations</li>
+                        <li><strong>External Partnerships:</strong> Collaboration with system integrators and consultants</li>
+                        <li><strong>Executive Sponsorship:</strong> Leadership alignment and prioritization</li>
+                        <li><strong>Technical Champions:</strong> Internal experts to guide implementation teams</li>
+                    </ul>
+                </div>
+
+                <div class="module-section">
+                    <h4>Results and Metrics</h4>
+                    <p>The transformation has achieved significant results:</p>
+                    <ul>
+                        <li>Over 85% of customers migrated to the new platform architecture</li>
+                        <li>Improved performance metrics across key transactions</li>
+                        <li>Enhanced scalability for B2C and high-volume use cases</li>
+                        <li>Expanded geographic availability through Hyperforce</li>
+                        <li>Foundation established for generative AI and agent capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4>Quick Check</h4>
+                    <p>Which approach involves testing new platform components with real workloads before making them visible to customers?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Progressive Exposure</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Dark Launching</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Parallel Architecture</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Feature Toggles</div>
+                    </div>
+                    <div class="quiz-feedback d-none"></div>
+                </div>
+            `,
+            challenges: [
+                "Coordinating complex changes across thousands of engineers and products",
+                "Ensuring zero disruption for mission-critical customer operations",
+                "Managing the migration of hundreds of thousands of customer organizations",
+                "Balancing transformation speed with quality and stability",
+                "Maintaining comprehensive testing across countless customer configurations"
+            ]
+        },
+        {
+            id: 19,
+            title: 'Conclusion',
+            icon: 'bi-flag',
+            summary: 'Summarize the key learnings and future direction of Salesforce\'s platform transformation.',
+            content: `
+                <h2>Conclusion</h2>
+                <div class="module-section">
+                    <p>Salesforce's platform transformation represents a remarkable achievement in enterprise software evolution. By reimagining its architecture while maintaining backward compatibility and reliability, Salesforce has positioned itself for the next generation of customer experiences powered by real-time data, AI, and autonomous agents.</p>
+                    
+                    <div class="key-highlight">
+                        <h5>Key Transformation Outcomes</h5>
+                        <ul>
+                            <li><strong>Future-Ready Foundation:</strong> Platform ready for emerging technologies and use cases</li>
+                            <li><strong>Hyperscale Capabilities:</strong> Support for massive scale and real-time processing</li>
+                            <li><strong>Global Deployment:</strong> Expanded availability across global regions</li>
+                            <li><strong>AI Integration:</strong> Deep AI capabilities throughout the platform</li>
+                            <li><strong>Enhanced Extensibility:</strong> More powerful tools for customization and integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Business Impact Drivers</h4>
+                    <p>The platform transformation enables several key business impact drivers:</p>
+                    
+                    <div class="interactive-element">
+                        <h5>Explore Business Impact Drivers</h5>
+                        <div id="drivers-container" class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100" onclick="highlightCard(this)">
+                                    <div class="card-body">
+                                        <h5>Customer Experience</h5>
+                                        <p>The transformed platform enables more personalized, real-time customer interactions across all touchpoints. AI-driven insights and autonomous agents create more responsive and proactive customer experiences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100" onclick="highlightCard(this)">
+                                    <div class="card-body">
+                                        <h5>Operational Efficiency</h5>
+                                        <p>Automation capabilities, intelligent workflows, and predictive insights drive significant operational efficiencies. Organizations can automate routine tasks and focus human effort on high-value activities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100" onclick="highlightCard(this)">
+                                    <div class="card-body">
+                                        <h5>Business Agility</h5>
+                                        <p>The platform's enhanced flexibility and composable architecture allow organizations to adapt quickly to changing market conditions, launch new offerings, and reconfigure business processes rapidly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100" onclick="highlightCard(this)">
+                                    <div class="card-body">
+                                        <h5>Innovation Velocity</h5>
+                                        <p>The modernized platform accelerates innovation by providing powerful low-code tools, pre-built components, and AI capabilities that enable faster solution development and deployment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100" onclick="highlightCard(this)">
+                                    <div class="card-body">
+                                        <h5>Data-Driven Decisions</h5>
+                                        <p>Enhanced analytics capabilities, real-time data processing, and AI-powered insights enable more informed decision-making throughout organizations, from frontline workers to executives.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100" onclick="highlightCard(this)">
+                                    <div class="card-body">
+                                        <h5>Ecosystem Expansion</h5>
+                                        <p>The platform transformation enables a broader ecosystem of partners, developers, and solutions that extend core capabilities, creating a multiplier effect on the value delivered to customers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-section">
+                    <h4>Future Directions</h4>
+                    <p>The platform transformation sets the stage for future innovations:</p>
+                    <ul>
+                        <li><strong>Autonomous Agents:</strong> Self-operating business processes and intelligent agents</li>
+                        <li><strong>Hyper-Personalization:</strong> Individual-level customization at massive scale</li>
+                        <li><strong>Industry Convergence:</strong> Cross-industry solutions and data sharing</li>
+                        <li><strong>Embedded Intelligence:</strong> AI capabilities throughout all aspects of the platform</li>
+                        <li><strong>Ambient Computing:</strong> Seamless experiences across devices and interfaces</li>
+                    </ul>
+                </div>
+
+                <div class="module-section">
+                    <h4>Key Takeaways</h4>
+                    <p>As you complete this training on Salesforce's platform transformation, remember these key lessons:</p>
+                    <ul>
+                        <li>Successful platform evolution requires balancing innovation with continuity</li>
+                        <li>Architectural decisions should be guided by long-term vision and principles</li>
+                        <li>Customer needs must remain at the center of transformation efforts</li>
+                        <li>Delivering large-scale change requires both technical and organizational strategies</li>
+                        <li>Platform capabilities must evolve to address emerging technologies and market shifts</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4>Final Check</h4>
+                    <p>What percentage of Salesforce customers have been migrated to the new platform architecture?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Around 50%</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Over 70%</div>
+                        <div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">More than 85%</div>
+                        <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Less than 30%</div>
+                    </div>
+                    <div class="quiz-feedback d-none"></div>
+                </div>
+            `,
+            challenges: [
+                "Continuing to innovate while maintaining the stability enterprises require",
+                "Addressing emerging ethical considerations around AI and automation",
+                "Balancing standardization with customization as the platform evolves",
+                "Managing the growing complexity of the overall ecosystem",
+                "Preparing for new computing paradigms and interface technologies"
             ]
         }
     ];
