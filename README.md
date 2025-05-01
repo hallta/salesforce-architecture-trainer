@@ -59,6 +59,40 @@ Available options:
 - `--host`: The host to run the app on (default: 127.0.0.1)
 - `--port`: The port to run the app on (default: 5001)
 
+## Testing
+
+The application includes a test suite to ensure functionality works as expected. Tests are located in the `test/` directory.
+
+### Running Tests
+
+To run all tests:
+```
+python -m pytest
+```
+
+To run a specific test file:
+```
+python -m pytest test/test_module_view.py
+```
+
+To run tests with verbose output:
+```
+python -m pytest -v
+```
+
+To run tests with code coverage report:
+```
+python -m pytest --cov=app
+```
+
+### Test Structure
+
+The test suite is organized as follows:
+- `test/test_module_view.py`: Tests for the module view functionality
+- Additional test files will be added as the application grows
+
+Each test file contains a series of test functions that validate specific functionality and edge cases.
+
 ## Project Structure
 
 ```
@@ -69,6 +103,8 @@ salesforce-architecture-trainer/
 │   ├── index.html          # Module grid view
 │   └── module.html         # Individual module view
 ├── static/                 # Static assets (CSS, JS, images) - will be created when needed
+├── test/                   # Test directory
+│   └── test_module_view.py # Tests for module view functionality
 ├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
