@@ -61,7 +61,7 @@ Available options:
 
 ## Testing
 
-The application includes a test suite to ensure functionality works as expected. Tests are located in the `test/` directory.
+The application includes a comprehensive test suite to ensure functionality works as expected. Tests are located in the `test/` directory.
 
 ### Running Tests
 
@@ -85,13 +85,31 @@ To run tests with code coverage report:
 python -m pytest --cov=app
 ```
 
+To generate a detailed HTML coverage report:
+```
+python -m pytest --cov=app --cov-report=html
+```
+This will create a `htmlcov` directory with an interactive HTML report showing which lines of code are covered by tests.
+
 ### Test Structure
 
 The test suite is organized as follows:
 - `test/test_module_view.py`: Tests for the module view functionality
+- `test/test_api_endpoints.py`: Tests for the API endpoints (like complete-module)
 - Additional test files will be added as the application grows
 
-Each test file contains a series of test functions that validate specific functionality and edge cases.
+Each test file contains a series of test functions that validate specific functionality and edge cases, with comprehensive docstrings and comments explaining what each test does and why.
+
+### Writing New Tests
+
+When writing new tests:
+1. Create a test file in the `test/` directory named `test_<functionality>.py`
+2. Use pytest fixtures for common setup (like the test client)
+3. Organize tests into classes based on the functionality being tested
+4. Use descriptive test method names with the format `test_<function>_<scenario>`
+5. Add detailed docstrings explaining what each test verifies
+6. Use the Arrange-Act-Assert pattern for structuring tests
+7. Use mocking to isolate the code being tested from its dependencies
 
 ## Project Structure
 
@@ -104,7 +122,8 @@ salesforce-architecture-trainer/
 │   └── module.html         # Individual module view
 ├── static/                 # Static assets (CSS, JS, images) - will be created when needed
 ├── test/                   # Test directory
-│   └── test_module_view.py # Tests for module view functionality
+│   ├── test_module_view.py # Tests for module view functionality
+│   └── test_api_endpoints.py # Tests for API endpoints
 ├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
